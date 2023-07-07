@@ -1,2 +1,2 @@
 [workspace]
-members = ["my-awesome-macros"]
+members = ["my-awesome-macros", "macro-demo-app"]
