@@ -22,3 +22,11 @@ pub fn simple_func_like_macro(_item: TokenStream) -> TokenStream {
         .parse()
         .unwrap()
 }
+
+/// JustForFunNoDerive capability
+/// I'll not make any changes in the code
+///
+#[proc_macro_derive(JustForFunNoDerive)]
+pub fn just_for_fun_no_derive(_item: TokenStream) -> TokenStream {
+    TokenStream::new()
+}
