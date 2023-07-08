@@ -8,7 +8,10 @@ fn main() {
 
     println!("The number from func like macro: {}", lucky_num);
 
-    let _ = FirstUnitStruct;
+    let _ = FirstUnitStruct {
+        field: "string".to_owned(),
+        field_two: "string".to_owned(),
+    };
 }
 
 // let the macro create a function definition
@@ -16,4 +19,9 @@ simple_func_like_macro!(everything, in, here, will, be, ignored);
 
 // derive macro
 #[derive(JustForFunNoDerive)]
-struct FirstUnitStruct;
+pub struct FirstUnitStruct {
+    #[field_one]
+    pub field: String,
+    #[field_two]
+    pub field_two: String,
+}
