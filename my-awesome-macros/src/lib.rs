@@ -30,3 +30,16 @@ pub fn simple_func_like_macro(_item: TokenStream) -> TokenStream {
 pub fn just_for_fun_no_derive(_item: TokenStream) -> TokenStream {
     TokenStream::new()
 }
+
+/// simple macro attribute\
+/// it prints attributes recieved and\
+/// and item being annotated\
+#[proc_macro_attribute]
+pub fn simple_proc_macro_attribute(attr: TokenStream, item: TokenStream) -> TokenStream {
+    println!(
+        "attributes of simple_proc_macro_attribute: \"{}\"",
+        attr.to_string()
+    );
+    println!("attributed item itself: \"{}\"", item.to_string());
+    item
+}
