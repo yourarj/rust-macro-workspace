@@ -1,4 +1,4 @@
-use am::{simple_func_like_macro, JustForFunNoDerive};
+use am::{simple_func_like_macro, simple_proc_macro_attribute, JustForFunNoDerive};
 
 fn main() {
     println!("Hello, Macro-World!");
@@ -24,4 +24,9 @@ pub struct FirstUnitStruct {
     pub field: String,
     #[field_two]
     pub field_two: String,
+}
+
+#[simple_proc_macro_attribute]
+pub fn i_will_annotated(arg: String) {
+    println!("Hello from method - {}", arg);
 }
