@@ -1,4 +1,4 @@
-use am::{simple_func_like_macro, simple_proc_macro_attribute, JustForFunNoDerive};
+use am::{loggable, simple_func_like_macro, JustForFunNoDerive};
 
 fn main() {
     println!("Hello, Macro-World!");
@@ -26,7 +26,20 @@ pub struct FirstUnitStruct {
     pub field_two: String,
 }
 
-#[simple_proc_macro_attribute]
+// #[simple_proc_macro_attribute]
 pub fn i_will_annotated(arg: String) {
     println!("Hello from method - {}", arg);
+}
+
+#[loggable(hello)]
+fn hello() {
+    let a = 30;
+    let b = 20;
+
+    #[loggable::check_if]
+    #[loggable::ret_me]
+    let result = a + b;
+
+    #[loggable::check_if]
+    result
 }
